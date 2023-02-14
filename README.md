@@ -26,7 +26,7 @@ query GetRepositories {
 }
 ```
 
-````graphql
+```graphql
 query GetRepository {
   repository(owner: "PHACDataHub", name: "node-microservices-demo"){
     id
@@ -47,7 +47,6 @@ query GetOwnerRepositoryCount {
   }
 }
 ```
-
 
 ## References
 

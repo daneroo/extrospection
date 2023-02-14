@@ -2,6 +2,13 @@
 
 Use the GitHub GraphQL API to introspect a set of repositories
 
+## TODO
+
+- [ ] Publish to GitHub Pages
+  - [ ] Github Action on push to main
+  - [ ] Github Action on cron
+- [ ] Publish to vercel/deno (SSR)
+
 ## Astro subproject
 
 - `npm create astro@latest`

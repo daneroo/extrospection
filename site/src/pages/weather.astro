@@ -1,0 +1,40 @@
+---
+const endpoint = "https://api.github.com/graphql";
+const accessToken = import.meta.env.GITHUB_TOKEN;
+const response = await fetch(endpoint, {
+  method: "POST",
+  headers: {
+    Authorization: `Bearer ${accessToken}`,
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    query: `
+      query GetRepositories {
+        search(query: "org:PHACDataHub", type: REPOSITORY, first: 100) {
+          repositoryCount
+          edges {
+            node {
+              ... on Repository {
+                id
+                nameWithOwner
+                description
+                url
+              }
+            }
+          }
+        }
+      }
+        `,
+    variables: {
+      org: "PHACDataHub",
+    },
+  }),
+});
+
+console.log(JSON.stringify(response, null, 2));
+const json = await response.json();
+---
+
+<h1>Fetching Repos at build time</h1>
+<h2>{endpoint}</h2>
+<pre>Repos: {JSON.stringify(json,null,2)}</pre>

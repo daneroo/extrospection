@@ -33,7 +33,7 @@ func main() {
 		fmt.Println("Last modified:", info.ModTime())
 
 		// Print the permissions mode
-		fmt.Println("Permissions mode:", info.Mode().String())
+		fmt.Println("Permissions mode:", info.Mode().String(), "(", info.Mode(), ")")
 
 		// Open the file
 		file, err := os.Open(path)

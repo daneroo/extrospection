@@ -34,14 +34,15 @@ export async function getProjects({ endpoint, accessToken, org }) {
   // {
   //   "data": {
   //     "search": {
-  //       "repositoryCount": 29,
+  //       "repositoryCount": 164,
   //       "edges": [
   //         {
   //           "node": {
-  //             "id": "R_kgDOIdKvng",
-  //             "nameWithOwner": "PHACDataHub/django-htmx-autocomplete",
-  //             "description": "A Django autocomplete component powered by htmx",
-  //             "url": "https://github.com/PHACDataHub/django-htmx-autocomplete"
+  //             "id": "MDEwOlJlcG9zaXRvcnkyMjY0NTYwNTc=",
+  //             "name": "gphotos-puppeteer",
+  //             "nameWithOwner": "daneroo/gphotos-puppeteer",
+  //             "description": "Download Google Photos with puppeteer",
+  //             "url": "https://github.com/daneroo/gphotos-puppeteer"
   //           }
   //         },
 

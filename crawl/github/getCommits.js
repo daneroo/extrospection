@@ -4,7 +4,7 @@ export async function getCommits({
   accessToken,
   owner,
   name,
-  n = 1,
+  n = 10,
 }) {
   const response = await fetch(endpoint, {
     method: "POST",
@@ -55,28 +55,27 @@ export async function getCommits({
   // console.error(response.status, response.statusText);
 
   const json = await response.json();
-  console.error(JSON.stringify(json, null, 2));
-  // {
-  //   "data": {
-  //     "repository": {
-  //       "refs": {
-  //         "edges": [
-  //           {
-  //             "node": {
-  //               "name": "main",
-  //               "target": {
-  //                 "history": {
-  //                   "edges": [
-  //                     {
-  //                       "node": {
-  //                         "committedDate": "2024-07-27T22:18:35Z"
-  //                       }
+  // console.error(JSON.stringify(json, null, 2));
+  // "data": {
+  //   "repository": {
+  //     "refs": {
+  //       "edges": [
+  //         {
+  //           "node": {
+  //             "name": "main",
+  //             "target": {
+  //               "history": {
+  //                 "edges": [
+  //                   {
+  //                     "node": {
+  //                       "committedDate": "2024-07-27T22:21:04Z"
   //                     }
-  //                   ]
-  //                 }
-  //               }
-  //             }
-  //           }
+  //                   },
+  //                   {
+  //                     "node": {
+  //                       "committedDate": "2024-07-27T22:18:35Z"
+  //                     }
+  //                   },
 
   return json.data.repository.refs.edges.map((edge) => edge.node);
   // return json.data.search.edges.map((edge) => edge.node);

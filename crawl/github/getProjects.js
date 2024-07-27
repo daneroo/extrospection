@@ -31,6 +31,7 @@ export async function getProjects({ endpoint, accessToken, org }) {
   // console.error(response.status, response.statusText);
 
   const json = await response.json();
+  // console.error(JSON.stringify(json, null, 2));
   // {
   //   "data": {
   //     "search": {

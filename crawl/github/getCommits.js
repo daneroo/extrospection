@@ -55,25 +55,28 @@ export async function getCommits({
   // console.error(response.status, response.statusText);
 
   const json = await response.json();
-  // "data": {
-  //   "repository": {
-  //     "refs": {
-  //       "edges": [
-  //         {
-  //           "node": {
-  //             "name": "main",
-  //             "target": {
-  //               "history": {
-  //                 "edges": [
-  //                   {
-  //                     "node": {
-  //                       "committedDate": "2023-02-14T21:35:43Z"
+  console.error(JSON.stringify(json, null, 2));
+  // {
+  //   "data": {
+  //     "repository": {
+  //       "refs": {
+  //         "edges": [
+  //           {
+  //             "node": {
+  //               "name": "main",
+  //               "target": {
+  //                 "history": {
+  //                   "edges": [
+  //                     {
+  //                       "node": {
+  //                         "committedDate": "2024-07-27T22:18:35Z"
+  //                       }
   //                     }
-  //                   },
-  //                   {
-  //                     "node": {
-  //                       "committedDate": "2023-02-14T21:33:27Z"
-  //                     }
+  //                   ]
+  //                 }
+  //               }
+  //             }
+  //           }
 
   return json.data.repository.refs.edges.map((edge) => edge.node);
   // return json.data.search.edges.map((edge) => edge.node);

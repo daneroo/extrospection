@@ -17,7 +17,7 @@ Use the GitHub GraphQL API to introspect a set of repositories
 
 ```graphql
 query GetRepositories {
-  search(query: "org:PHACDataHub", type: REPOSITORY, first: 100) {
+  search(query: "org:daneroo", type: REPOSITORY, first: 100) {
     repositoryCount
     edges {
       node {
@@ -35,7 +35,7 @@ query GetRepositories {
 
 ```graphql
 query GetRepository {
-  repository(owner: "PHACDataHub", name: "node-microservices-demo"){
+  repository(owner: "daneroo", name: "extrospection") {
     id
     nameWithOwner
     description
@@ -62,4 +62,7 @@ query GetOwnerRepositoryCount {
 
 - [Astro with GitHub Pages](https://docs.astro.build/en/guides/deploy/github/)
 - [Astro with Nx](https://leosvel.dev/blog/creating-my-personal-website-with-astro-tailwindcss-and-nx/)
-````
+
+```
+
+```

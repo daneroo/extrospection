@@ -1,15 +1,17 @@
-import { getProjects } from "./github/getProjects.js";
-import { getCommits } from "./github/getCommits.js";
 import * as dotenv from "dotenv"; // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+
+import { getCommits } from "./github/getCommits.js";
+import { getProjects } from "./github/getProjects.js";
+
 dotenv.config();
 
 export const endpoint = "https://api.github.com/graphql";
 export const accessToken = process.env.GITHUB_TOKEN;
 
-await showProjects("PHACDataHub");
+await showProjects("ottawajs");
 await showProjects("daneroo");
 
-await showCommits("PHACDataHub", "cpho-phase2");
+await showCommits("ottawajs", "ottawajs.github.com");
 await showCommits("daneroo", "extrospection");
 
 async function showCommits(owner, name) {
